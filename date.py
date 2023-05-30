@@ -58,3 +58,6 @@ else :
     now = datetime.now()
     c = str(int(calculate_dates(bd,now)))
     print("That is in "+ c +" days!")
+    
+    if c != 0:
+        print("Woah! I am truly sorry, I must've been mistaken, that makes your birthday... Today! \nHappy Birthday. ")
