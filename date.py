@@ -56,5 +56,5 @@ else :
 
     bd = get_user_birthday()
     now = datetime.now()
-    c = int(calculate_dates(bd,now))
-    print(c)
+    c = str(int(calculate_dates(bd,now)))
+    print("That is in "+ c +" days!")
