@@ -1,6 +1,6 @@
 from datetime import datetime
 
-birthday = "19/04/1975"
+birthday = "19/04/1975" #dad
 mum_birthday = "30/08/1977"
 child1_birthday ="17/06/2005"
 child2_birthday = "04/09/2008"
@@ -30,7 +30,7 @@ elif(child2birthday_obj.day == now.day and child2birthday_obj.month == now.month
     print("Happy Birthday Child2! " + child2_age + " today!")
     
 else :
-    print("Oh I don't think today is your birthday:\n but I can tell you how many days until your next one.")
+    print("Oh I don't think today is your birthday:\nbut I can tell you how many days until your next one.")
 
     def get_user_birthday():
 #        year auto set but can be asked with:  year = int(input('When is your birthday? [YY] '))
@@ -56,8 +56,22 @@ else :
 
     bd = get_user_birthday()
     now = datetime.now()
-    c = str(int(calculate_dates(bd,now)))
-    print("That is in "+ c +" days!")
+    c = int(calculate_dates(bd,now))
     
-    if c != 0:
+    if c < 0:
+        c= str(abs(c))
+        print("That was "+ c +" days ago.")
+        exit()
+    
+    elif c!= 0:
+        c = str(int(calculate_dates(bd,now)))
+        print("That's in "+ c +" days!")
+        c = int(calculate_dates(bd,now))
+        exit()
+    
+    elif c == 0:
         print("Woah! I am truly sorry, I must've been mistaken, that makes your birthday... Today! \nHappy Birthday. ")
+        exit()
+    
+    else:
+        exit()
